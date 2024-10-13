@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: lightgray;
+            transition: background-color 0.3s ease;
+        }
+
+        canvas {
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        body.dark-mode canvas {
+            background-color: #222;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="game-container">
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="theme-selector mr-3">
+                            <button data-theme="light" class="btn btn-light">Light</button>
+                            <button data-theme="dark" class="btn btn-dark">Dark</button>
+                        </div>
+                    </div>
+                    <h1 class="text-center mb-3">Game of Life</h1>
+                    <canvas id="gameCanvas" width="800" height="400"></canvas>
+                    <div class="controls mt-3 d-flex justify-content-center">
+                        <button class="start btn btn-success mr-2">Start</button>
+                        <button class="pause btn btn-danger mr-2">Pause</button>
+                        <button class="reset btn btn-info mr-2">Reset</button>
+                        <div class="speed-control">
+                            <div class="speed-label">Speed: </div>
+                            <input type="range" min="0.01" max="1" step="0.01" value="0.5" class="speed-slider">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p> Developed by <a href="https://www.linkedin.com/in/fasteteg" target="_blank">Fernando Astete Gallardo</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
